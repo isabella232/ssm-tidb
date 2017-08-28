@@ -1,0 +1,11 @@
+[package]
+name = "callkv"
+version = "0.1.0"
+authors = ["philo <feilong.he@intel.com>"]
+
+[lib]
+crate-type = ["dylib"]
+name="tikv"
+
+[dependencies]
+tikv={path="../tikv"}
