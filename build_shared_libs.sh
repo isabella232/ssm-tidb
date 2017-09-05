@@ -22,7 +22,7 @@ mv libtidb.so $rootpath/launch
 rm libtidb.h 
 make clean
 
-cd $rootpath
-jar cf libtidb.jar ./launch/*.so
+cd $rootpath/launch
+jar cf ../libtidb.jar *.so
 
 echo "Build is completed!"
