@@ -8,6 +8,6 @@ build prerequisite
 
 1. build rocksdb.
    https://github.com/pingcap/docs/blob/3e186ac6d49e30659531a6864fc78f1519282556/scripts/build_rocksdb.sh
-2. install golang in /usr/local.
+2. install golang in /usr/local/.
 3. install rust nightly version.
    https://www.rust-lang.org/en-US/other-installers.html
