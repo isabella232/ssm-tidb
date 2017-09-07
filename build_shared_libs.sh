@@ -4,25 +4,25 @@ buildpath=$rootpath/components/src/github.com/pingcap
 cd $buildpath/pd
 echo "Building pd.."
 make
-mv libpd.so $rootpath/launch
+mv libpd.so $rootpath/lib
 rm libpd.h
 make clean
 
 cd $buildpath/callkv
 echo "Building tikv.."
 cargo build
-mv target/debug/libtikv.so $rootpath/launch
+mv target/debug/libtikv.so $rootpath/lib
 cargo clean
 
 cd $buildpath/tidb
 echo "Building tidb.."
 export GOPATH=$rootpath/components
 make
-mv libtidb.so $rootpath/launch
+mv libtidb.so $rootpath/lib
 rm libtidb.h 
 make clean
 
-cd $rootpath/launch
+cd $rootpath/lib
 jar cf ../libtidb.jar *.so
 
 echo "Build is completed!"
