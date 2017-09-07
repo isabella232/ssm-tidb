@@ -3,3 +3,7 @@
 .idea
 *.iml
 libtidb.jar
+
+threads/logs/
+threads/pd/
+threads/tikv/
