@@ -38,8 +38,8 @@ public class TikvServer implements Runnable {
     }
   }
 
-  public Tikv getTikv() {
-    return tikv;
+  public boolean isReady() {
+    return tikv.isTikvServerReady();
   }
 
   public void run() {

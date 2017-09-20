@@ -38,8 +38,8 @@ public class TidbServer implements Runnable {
     }
   }
 
-  public Tidb getTidb() {
-    return tidb;
+  public boolean isReady() {
+    return tidb.isTidbServerReady();
   }
 
   public void run() {

@@ -38,8 +38,8 @@ public class PdServer implements Runnable {
     }
   }
 
-  public Pd getPd() {
-    return pd;
+  public boolean isReady() {
+    return pd.isPdServerReady();
   }
 
   public void run() {
