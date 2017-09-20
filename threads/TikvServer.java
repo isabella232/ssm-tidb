@@ -21,25 +21,30 @@ import com.sun.jna.Native;
 
 public class TikvServer implements Runnable {
   private String args;
+  private Tikv tikv;
 
   public interface Tikv extends Library {
     void startServer(String args);
+
+    boolean isTikvServerReady();
   }
 
   public TikvServer(String args) {
     this.args = args;
-  }
-
-  public void run() {
-    Tikv tikv = null;
     try {
       tikv = (Tikv) Native.loadLibrary("libtikv.so", Tikv.class);
     } catch (UnsatisfiedLinkError ex) {
       System.out.println("libtikv.so is not found!");
     }
+  }
 
+  public Tikv getTikv() {
+    return tikv;
+  }
+
+  public void run() {
     StringBuffer strbuffer = new StringBuffer();
-    //According to start.rs in pingcap's tikv source code, "TiKV" is the flag name used for parsing
+    //According to start.rs in the tikv source code, "TiKV" is the flag name used for parsing
     strbuffer.append("TiKV");
     strbuffer.append(" ");
     strbuffer.append(args);

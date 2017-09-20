@@ -31,12 +31,27 @@ public class Launch implements Runnable {
     Thread pdThread = new Thread(pdServer);
     pdThread.start();
     try {
-      Thread.sleep(4000);
+      while (!pdServer.getPd().isPdServerReady()) {
+        System.out.println("waiting Pd server..");
+        Thread.sleep(100);
+      }
+      System.out.println("Pd server is ready.");
+
       Thread tikvThread = new Thread(tikvServer);
       tikvThread.start();
-      Thread.sleep(6000);
+      while (!tikvServer.getTikv().isTikvServerReady()) {
+        System.out.println("waiting Tikv server..");
+        Thread.sleep(100);
+      }
+      System.out.println("Tikv server is ready.");
+
       Thread tidbThread = new Thread(tidbServer);
       tidbThread.start();
+      while (!tidbServer.getTidb().isTidbServerReady()) {
+        System.out.println("waiting Tidb server..");
+        Thread.sleep(100);
+      }
+      System.out.println("Tidb server is ready.");
 
       pdThread.join();
       tikvThread.join();

@@ -21,23 +21,28 @@ import com.sun.jna.Native;
 
 public class PdServer implements Runnable {
   private String args;
+  private Pd pd;
 
   public interface Pd extends Library {
     void startServer(String args);
+
+    boolean isPdServerReady();
   }
 
   public PdServer(String args) {
     this.args = args;
-  }
-
-  public void run() {
-    Pd pd = null;
     try {
       pd = (Pd) Native.loadLibrary("libpd.so", Pd.class);
     } catch (UnsatisfiedLinkError ex) {
       System.out.println("libpd.so is not found!");
     }
+  }
 
+  public Pd getPd() {
+    return pd;
+  }
+
+  public void run() {
     System.out.println("Starting PD..");
     pd.startServer(args);
   }

@@ -21,23 +21,28 @@ import com.sun.jna.Native;
 
 public class TidbServer implements Runnable {
   private String args;
+  private Tidb tidb;
 
   public interface Tidb extends Library {
     void startServer(String args);
+
+    boolean isTidbServerReady();
   }
 
   public TidbServer(String args) {
     this.args = args;
-  }
-
-  public void run() {
-    Tidb tidb = null;
     try {
       tidb = (Tidb) Native.loadLibrary("libtidb.so", Tidb.class);
     } catch (UnsatisfiedLinkError ex) {
       System.out.println("libtidb.so is not found!");
     }
+  }
 
+  public Tidb getTidb() {
+    return tidb;
+  }
+
+  public void run() {
     System.out.println("Starting TiDB..");
     tidb.startServer(args);
   }
