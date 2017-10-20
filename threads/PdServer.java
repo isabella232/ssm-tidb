@@ -34,7 +34,7 @@ public class PdServer implements Runnable {
     try {
       pd = (Pd) Native.loadLibrary("libpd.so", Pd.class);
     } catch (UnsatisfiedLinkError ex) {
-      System.out.println("libpd.so is not found!");
+      System.out.println("Unable to load native library due to unsatisfied link error!");
     }
   }
 

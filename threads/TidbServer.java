@@ -34,7 +34,7 @@ public class TidbServer implements Runnable {
     try {
       tidb = (Tidb) Native.loadLibrary("libtidb.so", Tidb.class);
     } catch (UnsatisfiedLinkError ex) {
-      System.out.println("libtidb.so is not found!");
+      System.out.println("Unable to load native library due to unsatisfied link error!");
     }
   }
 

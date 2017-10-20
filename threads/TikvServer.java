@@ -34,7 +34,7 @@ public class TikvServer implements Runnable {
     try {
       tikv = (Tikv) Native.loadLibrary("libtikv.so", Tikv.class);
     } catch (UnsatisfiedLinkError ex) {
-      System.out.println("libtikv.so is not found!");
+      System.out.println("Unable to load native library due to unsatisfied link error!");
     }
   }
 
