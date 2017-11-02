@@ -22,5 +22,7 @@
    In the cluster situation, the client-url option for pd and the addr option for tikv should not be 127.0.0.1.
 
    For pd server, --name=pd --data-dir=pd --client-urls="http://192.168.150.104:2379" --peer-urls="http://192.168.150.104:2380" --log-file=pd.log
+
    For tikv server, --pd="192.168.150.104:2379" --addr="192.168.150.109:20160"  --data-dir=tikv --log-file=tikv.log
+
    For tidb server, --store=tikv --path="192.168.150.104:2379" --log-file=tidb.log
