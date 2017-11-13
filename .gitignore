@@ -4,7 +4,7 @@
 *.iml
 libtidb.jar
 
-./logs/
-./pd/
-./tikv/
-./classes/
+/logs/
+/pd/
+/tikv/
+/classes/
