@@ -32,7 +32,6 @@ public class Launch {
     pdThread.start();
     try {
       while (!pdServer.isReady()) {
-        System.out.println("waiting Pd server..");
         Thread.sleep(100);
       }
       System.out.println("Pd server is ready.");
@@ -40,7 +39,6 @@ public class Launch {
       Thread tikvThread = new Thread(tikvServer);
       tikvThread.start();
       while (!tikvServer.isReady()) {
-        System.out.println("waiting Tikv server..");
         Thread.sleep(100);
       }
       System.out.println("Tikv server is ready.");
@@ -48,7 +46,6 @@ public class Launch {
       Thread tidbThread = new Thread(tidbServer);
       tidbThread.start();
       while (!tidbServer.isReady()) {
-        System.out.println("waiting Tidb server..");
         Thread.sleep(100);
       }
       System.out.println("Tidb server is ready.");
