@@ -2,6 +2,6 @@ rootpath=`pwd`
 
 mkdir -p classes
 cd $rootpath/src
-javac -cp :$rootpath/lib/jna-4.4.0.jar -d ../classes Main.java
+javac -cp :$rootpath/lib/jna-4.4.0.jar -d ../classes Launch.java
 
 echo "Finished!" 
