@@ -6,7 +6,3 @@
 	path = components/src/github.com/pingcap/tikv
 	url = https://github.com/PHILO-HE/tikv.git
 	branch = rc4
-[submodule "components/src/github.com/pingcap/pd"]
-	path = components/src/github.com/pingcap/pd
-	url = https://github.com/PHILO-HE/pd.git
-	branch = rc4
