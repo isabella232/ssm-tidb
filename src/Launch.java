@@ -21,8 +21,7 @@ public class Launch {
   public static void main(String[] args) {
     String pdArgs = new String("--data-dir=pd --log-file=logs/pd.log");
     String tikvArgs = new String("--pd=127.0.0.1:2379 --data-dir=tikv --log-file=logs/tikv.log");
-    String tidbArgs = new String("--store=tikv --path=127.0.0.1:2379 --log-file=logs/tidb.log --P=4000 --lease=10s");
-    //String tidbArgs = new String("--log-file=logs/tidb.log");
+    String tidbArgs = new String("--store=tikv --path=127.0.0.1:2379 --log-file=logs/tidbtest.log --P=7070 --lease=10s");
 
     PdServer pdServer = new PdServer(pdArgs);
     TikvServer tikvServer = new TikvServer(tikvArgs);
@@ -32,26 +31,23 @@ public class Launch {
     pdThread.start();
     try {
       while (!pdServer.isReady()) {
-        System.out.println("waiting Pd server..");
         Thread.sleep(100);
       }
-      System.out.println("Pd server is ready.");
+      System.out.println("PD server is ready.");
 
       Thread tikvThread = new Thread(tikvServer);
       tikvThread.start();
       while (!tikvServer.isReady()) {
-        System.out.println("waiting Tikv server..");
         Thread.sleep(100);
       }
-      System.out.println("Tikv server is ready.");
+      System.out.println("TiKV server is ready.");
 
       Thread tidbThread = new Thread(tidbServer);
       tidbThread.start();
       while (!tidbServer.isReady()) {
-        System.out.println("waiting Tidb server..");
         Thread.sleep(100);
       }
-      System.out.println("Tidb server is ready.");
+      System.out.println("TiDB server is ready.");
 
       pdThread.join();
       tikvThread.join();
