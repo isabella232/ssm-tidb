@@ -17,7 +17,7 @@ This repository mainly includes the source code of Pd, TiKV and TiDB for buildin
 
    https://www.rust-lang.org/en-US/other-installers.html
 
-# support SSM project.
+# support SSM project
 
   To enable TiDB in SSM (https://github.com/Intel-bigdata/SSM.git), you should run build_shared_libs.sh to generate three files with .so suffix under lib/ directory in this project.
 
@@ -32,7 +32,7 @@ This repository mainly includes the source code of Pd, TiKV and TiDB for buildin
 
 1. unset http_proxy and https_proxy.
 
-2. Options for PD, TiKV and TiDB
+2. Options for PD, TiKV and TiDB.
 
    The client-urls option for pd must be a http address and a hostname is not valid.
    The addr option for tikv should be a ip address without starting with http.
