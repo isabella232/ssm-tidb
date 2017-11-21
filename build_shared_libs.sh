@@ -8,7 +8,7 @@ mv libpd.so $rootpath/lib
 rm libpd.h
 make clean
 
-cd $buildpath/callkv
+cd $buildpath/tikv
 echo "Building tikv.."
 cargo build
 mv target/debug/libtikv.so $rootpath/lib
