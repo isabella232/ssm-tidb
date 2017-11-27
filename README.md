@@ -2,20 +2,22 @@ This repository mainly includes the source code of Pd, TiKV and TiDB for buildin
 
 # build prerequisite
 
-1. build Rocksdb.
-
-   run build_rocksdb.sh
-
-2. install Golang (1.5+ version).
+1. install Golang (1.5+ version).
 
    https://golang.org/dl/
 
    Suppose ${GO_HOME} is the path where golang is installed. Please set ${GO_HOME}/bin/ in $PATH.
    If ${GO_HOME} is not under /usr/local/, please set $GOROOT: export GOROOT=${GO_HOME}.
 
-3. install Rust. Only the nightly version is valid.
+2. install Rust. Only the nightly version is valid.
 
    https://www.rust-lang.org/en-US/other-installers.html
+
+3. build Rocksdb.
+
+   run build_rocksdb.sh
+
+You can just run pre_build.sh to install the above dependencies.
 
 # support SSM project
 
