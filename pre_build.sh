@@ -10,7 +10,7 @@ export GOROOT=/usr/local/go
 wget https://static.rust-lang.org/dist/2017-08-09/rust-nightly-x86_64-unknown-linux-gnu.tar.gz
 tar -xf rust-nightly-x86_64-unknown-linux-gnu.tar.gz
 pushd rust-nightly-x86_64-unknown-linux-gnu && sudo ./install.sh && popd
-rm rust-nightly-x86_64-unknown-linux-gnu.tar.gz rust-nightly-x86_64-unknown-linux-gnu
+rm -r rust-nightly-x86_64-unknown-linux-gnu.tar.gz rust-nightly-x86_64-unknown-linux-gnu
 
 #install Rocksdb
 ./build_rocksdb.sh

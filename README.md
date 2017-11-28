@@ -2,7 +2,7 @@ This repository mainly includes the source code of Pd, TiKV and TiDB for buildin
 
 # Build prerequisite
 
-You can just run pre_build.sh to install the following dependencies.
+You can just run `source pre_build.sh` to install the following dependencies.
 
 1. install Golang (1.5+ version).
 
