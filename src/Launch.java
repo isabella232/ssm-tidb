@@ -21,7 +21,7 @@ public class Launch {
   public static void main(String[] args) {
     String pdArgs = new String("--data-dir=pd --log-file=logs/pd.log");
     String tikvArgs = new String("--pd=127.0.0.1:2379 --data-dir=tikv --log-file=logs/tikv.log");
-    String tidbArgs = new String("--store=tikv --path=127.0.0.1:2379 --log-file=logs/tidbtest.log --P=7070 --lease=10s");
+    String tidbArgs = new String("--store=tikv --path=127.0.0.1:2379 --log-file=logs/tidb.log --P=7070 --lease=10s");
 
     PdServer pdServer = new PdServer(pdArgs);
     TikvServer tikvServer = new TikvServer(tikvArgs);
