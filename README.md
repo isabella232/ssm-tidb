@@ -1,6 +1,6 @@
 This repository mainly includes the source code of Pd, TiKV and TiDB for building shared libraries.
 
-# Build prerequisite
+## Build prerequisite
 
 You can just run `source pre_build.sh` to install the following dependencies.
 
@@ -19,18 +19,18 @@ You can just run `source pre_build.sh` to install the following dependencies.
 
    run build_rocksdb.sh
 
-# Support SSM project
+## Support SSM project
 
   To enable TiDB in SSM (https://github.com/Intel-bigdata/SSM.git), you should run build_shared_libs.sh to generate three files with .so suffix under lib/ directory in this project.
 
   After build is completed, you should put libpd.so, libtikv.so and libtidb.so into {SSM_HOME}/lib.
   The libtikv.so is dynamically linked to librocksdb.so.5.6. So you should also build rocksdb as build prerequisite section guides on each host where TiKV is deployed.
 
-# Run demo
+## Run demo
 
   Run compile.sh to compile the java code and run start.sh to start tidb.
 
-# Deployment tips
+## Deployment tips
 
 unset http_proxy and https_proxy.
 
